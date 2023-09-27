@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:text="Map"
         android:layout_centerHorizontal="true"
-        android:background="#9EB23B"
+        android:background="@color/green"
         android:layout_below="@+id/btnTopLeft"
         android:layout_marginTop="16dp"
         />
