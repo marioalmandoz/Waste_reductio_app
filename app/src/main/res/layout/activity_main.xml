@@ -37,6 +37,12 @@
         android:layout_marginTop="16dp"
         />
 
+    <View
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_red_dark"
+        andr
+
     <LinearLayout
         android:id="@+id/bottomMenu"
         android:layout_width="match_parent"

@@ -22,10 +22,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WastereductionApp"
         tools:targetApi="31">
+        <activity
+            android:name=".Goal"
+            android:exported="false" />
+        <activity
+            android:name=".Schedule"
+            android:exported="false" />
+        <activity
+            android:name=".Info"
+            android:exported="false" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
         <activity
             android:name=".Maps"
             android:exported="false" />

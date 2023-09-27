@@ -1,35 +1,16 @@
 package net.wastereduction
 
 import android.Manifest
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.app.TaskStackBuilder
-import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.MapFragment
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.MarkerOptions
 import net.wastereduction.databinding.ActivityMainBinding
 
-
-
-
-class MainActivity : AppCompatActivity() {
-
+class Goal : AppCompatActivity() {
     private var requestCamera : ActivityResultLauncher<String>? = null
     private lateinit var binding : ActivityMainBinding  // para acceder a la vista de la app
 
@@ -38,15 +19,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 //############################################################ESTO PAR LA CAMARA #########################################
-        requestCamera = registerForActivityResult(ActivityResultContracts
-            .RequestPermission(),){
-                if(it){
-                    val intent = Intent(this,BarcodeScan::class.java)
-                    startActivity(intent)
-                }else{
-                    Toast.makeText(this, "Permission denied",
-                        Toast.LENGTH_SHORT).show()
-                }
+        requestCamera = registerForActivityResult(
+            ActivityResultContracts
+                .RequestPermission(),){
+            if(it){
+                val intent = Intent(this,BarcodeScan::class.java)
+                startActivity(intent)
+            }else{
+                Toast.makeText(this, "Permission denied",
+                    Toast.LENGTH_SHORT).show()
+            }
         }
         binding.btnBc.setOnClickListener(){requestCamera?.launch(Manifest.permission.CAMERA)}
         binding.btnBc.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
@@ -57,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.button1.setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 1
-
+            goHome()
         }
         binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
 
@@ -81,6 +63,10 @@ class MainActivity : AppCompatActivity() {
     }
     private fun abrirMaps(){
         val intent = Intent(this, Maps::class.java)
+        startActivity(intent)
+    }
+    private fun goHome(){
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
     }
     private fun goInfo(){
