@@ -88,7 +88,7 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="150dp"
                     android:layout_margin="20dp"
                     app:cardCornerRadius="20dp"
@@ -103,7 +103,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="103dp"
-                            android:background="@android:color/black"></View>
+                            android:background="#FFFDE3"></View>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -117,7 +117,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="150dp"
                     android:layout_margin="20dp"
                     app:cardCornerRadius="20dp"
@@ -132,7 +132,65 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="103dp"
-                            android:background="@android:color/black"></View>
+                            android:background="#FFFDE3"></View>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Olivia"
+                            android:textSize="25dp"></TextView>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="103dp"
+                            android:background="#FFFDE3"></View>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Olivia"
+                            android:textSize="25dp"></TextView>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="20dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="103dp"
+                            android:background="#FFFDE3"></View>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -161,65 +219,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="103dp"
-                            android:background="@android:color/black"></View>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Olivia"
-                            android:textSize="25dp"></TextView>
-
-                    </LinearLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="103dp"
-                            android:background="@android:color/black"></View>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Olivia"
-                            android:textSize="25dp"></TextView>
-
-                    </LinearLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_margin="20dp"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="103dp"
-                            android:background="@android:color/black"></View>
+                            android:background="#FFFDE3"></View>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -254,7 +254,7 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="150dp"
                     android:layout_margin="20dp"
                     app:cardCornerRadius="20dp"
@@ -269,7 +269,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="103dp"
-                            android:background="@android:color/black"></View>
+                            android:background="#FFFDE3"></View>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -283,7 +283,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="150dp"
                     android:layout_margin="20dp"
                     app:cardCornerRadius="20dp"
@@ -298,7 +298,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="103dp"
-                            android:background="@android:color/black"></View>
+                            android:background="#FFFDE3"></View>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -312,7 +312,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="150dp"
                     android:layout_margin="20dp"
                     app:cardCornerRadius="20dp"
@@ -327,7 +327,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="103dp"
-                            android:background="@android:color/black"></View>
+                            android:background="#FFFDE3"></View>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -341,7 +341,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="150dp"
                     android:layout_margin="20dp"
                     app:cardCornerRadius="20dp"
@@ -356,7 +356,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="103dp"
-                            android:background="@android:color/black"></View>
+                            android:background="#FFFDE3"></View>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -370,7 +370,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="150dp"
+                    android:layout_width="200dp"
                     android:layout_height="150dp"
                     android:layout_margin="20dp"
                     app:cardCornerRadius="20dp"
@@ -385,7 +385,7 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="103dp"
-                            android:background="@android:color/black"></View>
+                            android:background="#FFFDE3"></View>
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -452,7 +452,7 @@
             android:text="5"/>
 
     </LinearLayout>
-    
+
 
 
 </RelativeLayout>
