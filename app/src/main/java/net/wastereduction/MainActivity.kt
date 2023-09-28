@@ -42,8 +42,78 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+<<<<<<< HEAD
+=======
+//############################################################ESTO PAR LA CAMARA #########################################
+        requestCamera = registerForActivityResult(ActivityResultContracts
+            .RequestPermission(),){
+                if(it){
+                    val intent = Intent(this,BarcodeScan::class.java)
+                    startActivity(intent)
+                }else{
+                    Toast.makeText(this, "Permission denied",
+                        Toast.LENGTH_SHORT).show()
+                }
+        }
+        binding.btnBc.setOnClickListener(){requestCamera?.launch(Manifest.permission.CAMERA)}
+        binding.btnBc.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
+
+
+
+
+
+        binding.button1.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_home),null,null,null)
+
+        binding.button1.setOnClickListener {
+            // Acción a realizar cuando se hace clic en el Botón 1
+
+        }
+        binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
+
+        binding.button2.setOnClickListener {
+            // Acción a realizar cuando se hace clic en el Botón 2
+            goInfo()
+        }
+
+        binding.button4.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
+        binding.button4.setOnClickListener {
+            // Acción a realizar cuando se hace clic en el Botón 4
+            goSchedule()
+        }
+
+        binding.button5.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_goal),null,null,null)
+
+        binding.button5.setOnClickListener {
+            // Acción a realizar cuando se hace clic en el Botón 5
+            goGoal()
+        }
+    }
+    private fun abrirMaps(){
+        val intent = Intent(this, Maps::class.java)
+        startActivity(intent)
+>>>>>>> 67856858d9fade2d94ccd30b7818bb35b06ff1e7
+    }
+
+    private fun goInfo(){
+        val intent = Intent(this, Info::class.java)
+        startActivity(intent)
+    }
+    private fun goSchedule(){
+        val intent = Intent(this, Schedule::class.java)
+        startActivity(intent)
+    }
+    private fun goGoal(){
+        val intent = Intent(this, Goal::class.java)
+        startActivity(intent)
     }
 }
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 67856858d9fade2d94ccd30b7818bb35b06ff1e7
 class SomeActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout;
     private lateinit var navigationView: NavigationView;
