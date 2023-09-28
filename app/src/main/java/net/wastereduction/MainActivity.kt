@@ -25,6 +25,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import net.wastereduction.adapter.RemainderAdapter
 import net.wastereduction.databinding.ActivityMainBinding
 
 
@@ -38,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        initRecyclerView()
 //############################################################ESTO PAR LA CAMARA #########################################
         requestCamera = registerForActivityResult(ActivityResultContracts
             .RequestPermission(),){
@@ -49,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
                 }
         }
+
         binding.btnBc.setOnClickListener(){requestCamera?.launch(Manifest.permission.CAMERA)}
         //codido para poner un icono en un boton
         binding.btnBc.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
@@ -88,6 +92,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnTopRight.setOnClickListener{
             goProfile()
         }
+
     }
     private fun abrirMaps(){
         val intent = Intent(this, Maps::class.java)
@@ -115,9 +120,9 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    /*private fun initRecyclerView(){
+    private fun initRecyclerView(){
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerList)
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        //recyclerView.adapter= SuperHeroAdapter(SuperHeroProvider.superHeroList)
-    }*/
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter= RemainderAdapter(RemainderProvider.remainderList)
+    }
 }
