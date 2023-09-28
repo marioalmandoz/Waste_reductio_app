@@ -32,7 +32,7 @@ class Info : AppCompatActivity() {
         binding.btnBc.setOnClickListener(){requestCamera?.launch(Manifest.permission.CAMERA)}
         binding.btnBc.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
 
-        binding.btnMaps.setOnClickListener { abrirMaps() }
+//        binding.btnMaps.setOnClickListener { abrirMaps() }
 
         binding.button1.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_home),null,null,null)
 
@@ -59,10 +59,10 @@ class Info : AppCompatActivity() {
             // Acción a realizar cuando se hace clic en el Botón 5
             goGoal()
         }
-        binding.btnTopLeft.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
-        binding.btnTopLeft.setOnClickListener{
-
-        }
+//        binding.btnTopLeft.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
+//        binding.btnTopLeft.setOnClickListener{
+//
+//        }
         binding.btnTopRight.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
         binding.btnTopRight.setOnClickListener{
             goProfile()
