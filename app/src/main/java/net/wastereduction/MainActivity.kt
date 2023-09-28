@@ -42,8 +42,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-<<<<<<< HEAD
-=======
+
 //############################################################ESTO PAR LA CAMARA #########################################
         requestCamera = registerForActivityResult(ActivityResultContracts
             .RequestPermission(),){
@@ -91,7 +90,7 @@ class MainActivity : AppCompatActivity() {
     private fun abrirMaps(){
         val intent = Intent(this, Maps::class.java)
         startActivity(intent)
->>>>>>> 67856858d9fade2d94ccd30b7818bb35b06ff1e7
+
     }
 
     private fun goInfo(){
@@ -107,13 +106,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 }
-<<<<<<< HEAD
-=======
 
-
-
-
->>>>>>> 67856858d9fade2d94ccd30b7818bb35b06ff1e7
 class SomeActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout;
     private lateinit var navigationView: NavigationView;
