@@ -22,10 +22,13 @@ import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import net.wastereduction.adapter.RemainderAdapter
 import net.wastereduction.databinding.ActivityMainBinding
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
@@ -35,15 +38,22 @@ import kotlinx.coroutines.newFixedThreadPoolContext
 
 class MainActivity : AppCompatActivity() {
 
+
     private var requestCamera: ActivityResultLauncher<String>? = null
     private lateinit var binding: ActivityMainBinding
+
+
+    private var requestCamera : ActivityResultLauncher<String>? = null
+    private lateinit var binding : ActivityMainBinding  // para acceder a la vista de la app
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-<<<<<<< HEAD
-=======
+
+
+        initRecyclerView()
+
 //############################################################ESTO PAR LA CAMARA #########################################
         requestCamera = registerForActivityResult(ActivityResultContracts
             .RequestPermission(),){
@@ -55,7 +65,9 @@ class MainActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT).show()
                 }
         }
+
         binding.btnBc.setOnClickListener(){requestCamera?.launch(Manifest.permission.CAMERA)}
+        //codido para poner un icono en un boton
         binding.btnBc.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
 
 
@@ -67,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         binding.button1.setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 1
 
+            goHome()
         }
         binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
 
@@ -87,11 +100,28 @@ class MainActivity : AppCompatActivity() {
             // Acción a realizar cuando se hace clic en el Botón 5
             goGoal()
         }
+        binding.btnTopLeft.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
+        binding.btnTopLeft.setOnClickListener{
+
+        }
+        binding.btnTopRight.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
+        binding.btnTopRight.setOnClickListener{
+            goProfile()
+        }
+
     }
     private fun abrirMaps(){
         val intent = Intent(this, Maps::class.java)
         startActivity(intent)
->>>>>>> 67856858d9fade2d94ccd30b7818bb35b06ff1e7
+
+    }
+
+
+
+// funciones para ir a las diferentes ventanas
+    private fun goHome(){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun goInfo(){
@@ -106,14 +136,8 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, Goal::class.java)
         startActivity(intent)
     }
+
 }
-<<<<<<< HEAD
-=======
-
-
-
-
->>>>>>> 67856858d9fade2d94ccd30b7818bb35b06ff1e7
 class SomeActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout;
     private lateinit var navigationView: NavigationView;
@@ -212,4 +236,17 @@ class SomeActivity : AppCompatActivity() {
 }
 
 
+
+
+    private fun goProfile(){
+        val intent = Intent(this, Profile::class.java)
+        startActivity(intent)
+    }
+
+    private fun initRecyclerView(){
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerList)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter= RemainderAdapter(RemainderProvider.remainderList)
+    }
+}
 
