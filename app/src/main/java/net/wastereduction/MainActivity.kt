@@ -35,62 +35,15 @@ import kotlinx.coroutines.newFixedThreadPoolContext
 
 class MainActivity : AppCompatActivity() {
 
-    private var requestCamera : ActivityResultLauncher<String>? = null
-    private lateinit var binding : ActivityMainBinding  // para acceder a la vista de la app
+    private var requestCamera: ActivityResultLauncher<String>? = null
+    private lateinit var binding: ActivityMainBinding
 
-    private val canalNombre = "Mario"
-    private val canalId ="canalId"
-    private val notificationId = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//############################################################ESTO PAR LA CAMARA #########################################
-        requestCamera = registerForActivityResult(ActivityResultContracts
-            .RequestPermission(),){
-                if(it){
-                    val intent = Intent(this,BarcodeScan::class.java)
-                    startActivity(intent)
-                }else{
-                    Toast.makeText(this, "Permission denied",
-                        Toast.LENGTH_SHORT).show()
-                }
-        }
-//        binding.btnBc.setOnClickListener(){requestCamera?.launch(Manifest.permission.CAMERA)}
-//        binding.btnBc.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
-//
-
-
-
-
-        binding.button1.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_home),null,null,null)
-
-        binding.button1.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 1
-        }
-        binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
-
-        binding.button2.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 2
-        }
-
-        binding.button4.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
-        binding.button4.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 4
-        }
-
-        binding.button5.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_goal),null,null,null)
-
-        binding.button5.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 5
-        }
-    }
-    private fun abrirMaps(){
-        val intent = Intent(this, Maps::class.java)
-        startActivity(intent)
     }
 }
-
 class SomeActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout;
     private lateinit var navigationView: NavigationView;
@@ -123,22 +76,27 @@ class SomeActivity : AppCompatActivity() {
                     // Handle item 2 click
                     true
                 }
+
                 R.id.home -> {
                     // Handle item 1 click
                     true
                 }
+
                 R.id.home3 -> {
                     // Handle item 1 click
                     true
                 }
+
                 R.id.home4 -> {
                     // Handle item 1 click
                     true
                 }
+
                 R.id.home6 -> {
                     // Handle item 1 click
                     true
                 }
+
                 R.id.home7 -> {
                     // Handle item 1 click
                     true
@@ -158,6 +116,7 @@ class SomeActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
     override fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(navigationView)) {
             // Close the navigation drawer if it's open
@@ -180,8 +139,7 @@ class SomeActivity : AppCompatActivity() {
             myView.bringToFront()
         }
     }
-
-
 }
+
 
 
