@@ -10,7 +10,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import net.wastereduction.databinding.ActivityMainBinding
 
-class Schedule : AppCompatActivity() {
+class Profile : AppCompatActivity() {
     private var requestCamera : ActivityResultLauncher<String>? = null
     private lateinit var binding : ActivityMainBinding  // para acceder a la vista de la app
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,11 +20,7 @@ class Schedule : AppCompatActivity() {
 //############################################################ESTO PAR LA CAMARA #########################################
         requestCamera = registerForActivityResult(
             ActivityResultContracts
-
                 .RequestPermission(),){
-
-            .RequestPermission(),){
-
             if(it){
                 val intent = Intent(this,BarcodeScan::class.java)
                 startActivity(intent)
@@ -36,10 +32,7 @@ class Schedule : AppCompatActivity() {
         binding.btnBc.setOnClickListener(){requestCamera?.launch(Manifest.permission.CAMERA)}
         binding.btnBc.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
 
-
-
         binding.btnMaps.setOnClickListener { abrirMaps() }
-
 
         binding.button1.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_home),null,null,null)
 
@@ -66,7 +59,6 @@ class Schedule : AppCompatActivity() {
             // Acción a realizar cuando se hace clic en el Botón 5
             goGoal()
         }
-
         binding.btnTopLeft.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
         binding.btnTopLeft.setOnClickListener{
 
@@ -75,13 +67,12 @@ class Schedule : AppCompatActivity() {
         binding.btnTopRight.setOnClickListener{
             goProfile()
         }
-
     }
     private fun abrirMaps(){
         val intent = Intent(this, Maps::class.java)
         startActivity(intent)
     }
-
+    //Funciones para ir a las diferentes ventanas
     private fun goHome(){
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
@@ -98,10 +89,8 @@ class Schedule : AppCompatActivity() {
         val intent = Intent(this, Goal::class.java)
         startActivity(intent)
     }
-
     private fun goProfile(){
         val intent = Intent(this, Profile::class.java)
         startActivity(intent)
     }
-
 }
