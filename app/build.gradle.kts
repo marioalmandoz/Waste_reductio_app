@@ -52,5 +52,9 @@ dependencies {
     implementation ("com.google.android.gms:play-services-vision:20.1.3")
 
     //Google maps
-    implementation ("com.google.android.gms:play-services-maps:18.0.2")
+    implementation ("com.google.android.gms:play-services-maps:18.1.0")
+    //retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1")
 }

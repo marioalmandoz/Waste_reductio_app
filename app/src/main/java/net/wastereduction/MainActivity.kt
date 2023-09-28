@@ -115,9 +115,9 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun initRecyclerView(){
+    /*private fun initRecyclerView(){
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerList)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         //recyclerView.adapter= SuperHeroAdapter(SuperHeroProvider.superHeroList)
-    }
+    }*/
 }

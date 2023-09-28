@@ -6,6 +6,8 @@ import android.content.pm.PackageManager
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -22,11 +24,23 @@ import com.google.android.gms.maps.model.Gap
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PatternItem
+import com.google.android.gms.maps.model.Polyline
 import com.google.android.gms.maps.model.PolylineOptions
-
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import okhttp3.Dispatcher
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 class Maps : AppCompatActivity(), OnMapReadyCallback, OnMyLocationButtonClickListener,GoogleMap.OnMyLocationClickListener  {
 
     private lateinit var map: GoogleMap
+    private lateinit var btnCalculate:Button
+
+    private var start:String = ""
+    private var end:String = ""
+
+    var poly: Polyline? = null
 
     companion object {
         const val REQUEST_CODE_LOCATION = 0
@@ -35,6 +49,27 @@ class Maps : AppCompatActivity(), OnMapReadyCallback, OnMyLocationButtonClickLis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
+
+        btnCalculate= findViewById(R.id.btnCalculateRoute)
+        btnCalculate.setOnClickListener {
+            start = ""
+            end = ""
+            poly?.remove()
+            poly = null
+            Toast.makeText(this, "Selecciona punto de origen y final", Toast.LENGTH_SHORT).show()
+            if(::map.isInitialized){
+                map.setOnMapClickListener {
+                    if(start.isEmpty()){
+                        //La cordenada tiene que ser asi 3,344515 , 14,455153
+                        start = "${it.longitude},${it.latitude}"
+                    }else if(end.isEmpty()){
+                        end = "${it.longitude},${it.latitude}"
+                       // createMarker()
+                        createRoute()
+                    }
+                }
+            }
+        }
         createFragment()
     }
 
@@ -46,34 +81,26 @@ class Maps : AppCompatActivity(), OnMapReadyCallback, OnMyLocationButtonClickLis
 
     override fun onMapReady(googleMap: GoogleMap) {// es un metodo creado por añadir OnMapReadyCallback
         map = googleMap
-        createMarker()
-        createPolylines()
+       // createMarker()
         map.setOnMyLocationButtonClickListener(this)
         map.setOnMyLocationClickListener(this)
         enableLocation()
 
     }
 
-    private fun createPolylines(){// funcion para crear lineas
+    private fun createPolylines(routeResponse: RouteResponse){// funcion para crear lineas
         val polyLineOptions = PolylineOptions()
-            .add(LatLng(40.419173113350965, -3.705976009368897))
-            .add(LatLng( 40.4150807746539, -3.706072568893432))
-            .add(LatLng( 40.41517062907432, -3.7012016773223873))
-            .add(LatLng( 40.41713105928677, -3.7037122249603267))
-            .add(LatLng( 40.41926296230622,  -3.701287508010864))
-            .add(LatLng( 40.419173113350965, -3.7048280239105225))
-            .add(LatLng(40.419173113350965,-3.705976009368897))
-            .width(10f)
-            .color(ContextCompat.getColor(this, R.color.green))
-        val polyline = map.addPolyline(polyLineOptions)
-        // custom de la linea
-        val pattern:List<PatternItem> = listOf(Dot(), Gap(10f), Dash(50f), Gap(10f))
-        polyline.pattern = pattern
+        routeResponse?.features?.first()?.geometry?.coordinates?.forEach {
+            polyLineOptions.add(LatLng(it[1], it[0]))
+        }
+        runOnUiThread {
+            poly = map.addPolyline(polyLineOptions)
+        }
     }
 
     private fun createMarker() { // para añadir puntos en el mapa y animaciones de enfoque automaticos
         //val coordinates = LatLng(43.315617, -1.980494)// mi casa
-        val coordinates = LatLng(40.419173113350965, -3.705976009368897)
+        val coordinates = LatLng(43.315494, -1.980978)
         val marker: MarkerOptions = MarkerOptions().position(coordinates).title("ICT University")
         map.addMarker(marker)
         map.animateCamera(
@@ -150,6 +177,22 @@ class Maps : AppCompatActivity(), OnMapReadyCallback, OnMyLocationButtonClickLis
 
     override fun onMyLocationClick(p0: Location) {
         Toast.makeText(this, "Estas en ${p0.latitude},${p0.longitude}", Toast.LENGTH_SHORT).show()
+    }
 
+    private fun getRetrofit():Retrofit{
+        return Retrofit.Builder()
+            .baseUrl("https://api.openrouteservice.org/")
+            .addConverterFactory(GsonConverterFactory.create()).build()
+    }
+    private fun createRoute() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val call = getRetrofit().create(ApiService::class.java)
+                .getRoute("5b3ce3597851110001cf62486591c2d88d34496898907edd0f5f77c0", start, end)
+            if (call.isSuccessful) {
+                call.body()?.let { createPolylines(it) }
+            } else {
+                Log.i("aris", "KO")
+            }
+        }
     }
 }
