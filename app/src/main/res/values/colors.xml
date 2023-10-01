@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
     <color name="colorPrimary">#9EB23B</color>
+    <color name="ColorPrimaryDark">#3700B3</color>
+
+    <color name="morado">#9C27B0</color>
+    <color name="green">#B2FF59</color>
+    <color name="blue">#536DFE</color>
+    <color name="red">#FF4081</color>
+    <color name="yellow">#FFFF00</color>
+
+
     <color name="colorPrimaryDark">#9EB23B</color>
     <color name="colorAccent">#9EB23B</color>
     <!-- Define your custom colors below -->
     <color name="your_color">#9EB23B</color>
+
 </resources>

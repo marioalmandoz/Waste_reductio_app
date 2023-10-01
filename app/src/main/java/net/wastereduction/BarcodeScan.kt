@@ -1,10 +1,14 @@
 package net.wastereduction
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.SurfaceHolder
 import android.widget.Toast
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
 import com.google.android.gms.vision.Detector.Detections
@@ -23,6 +27,43 @@ class BarcodeScan : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityBarcodeScanBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        binding.btnBc.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
+
+        binding.button1.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_home),null,null,null)
+
+        binding.button1.setOnClickListener {
+            // Acción a realizar cuando se hace clic en el Botón 1
+            goHome()
+        }
+        binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
+
+        binding.button2.setOnClickListener {
+            // Acción a realizar cuando se hace clic en el Botón 2
+            goInfo()
+        }
+
+        binding.button4.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
+        binding.button4.setOnClickListener {
+            // Acción a realizar cuando se hace clic en el Botón 4
+            goSchedule()
+        }
+
+        binding.button5.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_goal),null,null,null)
+
+        binding.button5.setOnClickListener {
+            // Acción a realizar cuando se hace clic en el Botón 5
+            goGoal()
+        }
+        binding.btnTopLeft.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
+        binding.btnTopLeft.setOnClickListener{
+
+        }
+        binding.btnTopRight.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
+        binding.btnTopRight.setOnClickListener{
+            goProfile()
+        }
     }
     private fun iniBc(){
         barcodeDetector = BarcodeDetector.Builder(this)
@@ -65,6 +106,10 @@ class BarcodeScan : AppCompatActivity() {
                         binding.btnAction!!.text = "SEARCH ITEM"
                         intentData = barcode.valueAt(0).displayValue
                         binding.txtBarcodeValue.setText(intentData)
+                        //////////AQUI VOY A EMPEZAR A COGER EL NUEVO DEL CODIGO DE BARRAS PARA PONER INFO
+                        if(intentData!=null){
+                            Toast.makeText(applicationContext, "El numero del codigo de barras es $intentData, gracis por escanearlo", Toast.LENGTH_LONG).show()
+                        }
                         //finish()
                     }
                 }
@@ -82,4 +127,32 @@ class BarcodeScan : AppCompatActivity() {
         super.onResume()
         iniBc()
     }
+
+
+//Funciones para ir a las diferentes ventanas
+private fun abrirMaps(){
+    val intent = Intent(this, Maps::class.java)
+    startActivity(intent)
+}
+
+private fun goHome(){
+    val intent = Intent(this, MainActivity::class.java)
+    startActivity(intent)
+}
+private fun goInfo(){
+    val intent = Intent(this, Info::class.java)
+    startActivity(intent)
+}
+private fun goSchedule(){
+    val intent = Intent(this, Schedule::class.java)
+    startActivity(intent)
+}
+private fun goGoal(){
+    val intent = Intent(this, Goal::class.java)
+    startActivity(intent)
+}
+private fun goProfile(){
+    val intent = Intent(this, Profile::class.java)
+    startActivity(intent)
+}
 }
