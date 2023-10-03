@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:padding="16dp">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F3D3A3">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aqui vamos a poner mucha informacion a cerca de las botellas o de lo que se escanee"
+            android:textColor="@color/colorTextoDialogo" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal">
+
+        <!-- Botón "Map" -->
+        <Button
+            android:id="@+id/buttonMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Map"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:textColor="@android:color/white"/>
+
+        <!-- Botón "Accept" -->
+        <Button
+            android:id="@+id/buttonAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_green_dark"
+            android:text="Accept"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+</LinearLayout>

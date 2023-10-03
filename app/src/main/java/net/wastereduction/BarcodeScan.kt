@@ -2,10 +2,12 @@ package net.wastereduction
 
 import android.Manifest
 import android.annotation.SuppressLint
+import androidx.appcompat.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.SurfaceHolder
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
@@ -108,7 +110,29 @@ class BarcodeScan : AppCompatActivity() {
                         binding.txtBarcodeValue.setText(intentData)
                         //////////AQUI VOY A EMPEZAR A COGER EL NUEVO DEL CODIGO DE BARRAS PARA PONER INFO
                         if(intentData!=null){
-                            Toast.makeText(applicationContext, "El numero del codigo de barras es $intentData, gracis por escanearlo", Toast.LENGTH_LONG).show()
+                            //TODO pra hacer un popUp
+                            val scannedNumber = intentData
+                            val builder = AlertDialog.Builder(this@BarcodeScan)
+                            val customLayout = layoutInflater.inflate(R.layout.custom_dialog_layout, null)
+                            val acceptButton = customLayout.findViewById<Button>(R.id.buttonAccept)
+                            val mapButton = customLayout.findViewById<Button>(R.id.buttonMap)
+
+                            // Configurar el clic del botón "Accept"
+                            acceptButton.setOnClickListener {
+                                // Cerrar el cuadro de diálogo
+                                //dialog.dismiss()
+                                // Agrega aquí cualquier acción adicional que desees realizar cuando se hace clic en "Accept"
+                            }
+
+                            // Configurar el clic del botón "Map"
+                            mapButton.setOnClickListener {
+                                // Agrega aquí la acción que desees realizar cuando se hace clic en "Map"
+                                abrirMaps() // Esto es solo un ejemplo, puedes abrir tu actividad de mapas aquí
+                            }
+
+                            builder.setView(customLayout)
+                            val dialog = builder.create()
+                            dialog.show()
                         }
                         //finish()
                     }
