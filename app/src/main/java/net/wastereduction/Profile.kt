@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -16,7 +17,7 @@ class Profile : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_profile)
 //############################################################ESTO PAR LA CAMARA #########################################
         requestCamera = registerForActivityResult(
             ActivityResultContracts
@@ -29,42 +30,42 @@ class Profile : AppCompatActivity() {
                     Toast.LENGTH_SHORT).show()
             }
         }
-        binding.btnBc.setOnClickListener(){requestCamera?.launch(Manifest.permission.CAMERA)}
-        binding.btnBc.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
+        findViewById<Button>(R.id.btnBc).setOnClickListener(){requestCamera?.launch(Manifest.permission.CAMERA)}
+        findViewById<Button>(R.id.btnBc).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
 
-        binding.btnMaps.setOnClickListener { abrirMaps() }
+//        binding.btnMaps.setOnClickListener { abrirMaps() }
 
-        binding.button1.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_home),null,null,null)
+        findViewById<Button>(R.id.button1).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_home),null,null,null)
 
-        binding.button1.setOnClickListener {
+        findViewById<Button>(R.id.button1).setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 1
             goHome()
         }
-        binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
+        findViewById<Button>(R.id.button2).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
 
-        binding.button2.setOnClickListener {
+        findViewById<Button>(R.id.button2).setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 2
             goInfo()
         }
 
-        binding.button4.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
-        binding.button4.setOnClickListener {
+        findViewById<Button>(R.id.button4).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
+        findViewById<Button>(R.id.button4).setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 4
             goSchedule()
         }
 
-        binding.button5.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_goal),null,null,null)
+        findViewById<Button>(R.id.button5).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_goal),null,null,null)
 
-        binding.button5.setOnClickListener {
+        findViewById<Button>(R.id.button5).setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 5
             goGoal()
         }
-        binding.btnTopLeft.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
-        binding.btnTopLeft.setOnClickListener{
-
-        }
-        binding.btnTopRight.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
-        binding.btnTopRight.setOnClickListener{
+        findViewById<Button>(R.id.btnTopLeft).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
+//        binding.btnTopLeft.setOnClickListener{
+//
+//        }
+        findViewById<Button>(R.id.btnTopRight).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
+        findViewById<Button>(R.id.btnTopRight).setOnClickListener{
             goProfile()
         }
     }

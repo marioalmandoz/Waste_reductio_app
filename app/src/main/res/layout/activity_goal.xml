@@ -17,49 +17,31 @@
 
 
     </com.google.android.material.navigation.NavigationView>
+
+
+
+
+
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#E0E0E0">
 
-        <Button
-            android:id="@+id/btnTopLeft"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Top Left"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"/>
 
-        <Button
-            android:id="@+id/btnTopRight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Top Right"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"/>
+        <View
+            android:id="@+id/myView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/rounded_view_background" />
 
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:text="This is Goal" />
 
-        <Button
-            android:id="@+id/btnMaps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Map"
-            android:layout_centerHorizontal="true"
-            android:background="@color/green"
-            android:layout_below="@+id/btnTopLeft"
-            android:layout_marginTop="16dp"
-            />
+
+
+
+
+
+
 
         <LinearLayout
             android:id="@+id/bottomMenu"
@@ -108,5 +90,46 @@
                 android:text="5"/>
 
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="123dp"
+            android:layout_height="115dp"
+            android:layout_alignBottom="@+id/myView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="144dp"
+            android:layout_marginEnd="144dp"
+            android:layout_marginBottom="7dp"
+            app:srcCompat="@drawable/baseline_account_circle_24" />
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="51dp"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:text="Button"
+            app:srcCompat="@drawable/baseline_keyboard_backspace_24" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/profile1"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/myView"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="427dp"
+                android:text="Name"
+                android:textAlignment="viewStart" />
+
+        </LinearLayout>
+
+
     </RelativeLayout>
+
 </androidx.drawerlayout.widget.DrawerLayout>
