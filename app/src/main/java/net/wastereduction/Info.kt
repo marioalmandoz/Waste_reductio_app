@@ -107,20 +107,19 @@ class Info : AppCompatActivity() {
 
 
 }
-class SomeActivity : AppCompatActivity() {
+class InfoActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout;
     private lateinit var navigationView: NavigationView;
     private lateinit var drawerToggle: ActionBarDrawerToggle;
-    private var isDrawerOpen = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
-        drawerToggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
-        drawerLayout.addDrawerListener(drawerToggle);
+        drawerLayout = findViewById(R.id.drawer_layout);    //gets the drawerlayout id from XML
+        navigationView = findViewById(R.id.nav_view);       //gets the nav id from XML
+        drawerToggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);    //Create a new ActionBarDrawerToggle
+        drawerLayout.addDrawerListener(drawerToggle);   //makes the drawerlayout open and close
         drawerToggle.syncState();
 
         val btnTopLeft: Button = findViewById(R.id.btnTopLeft)
@@ -181,15 +180,15 @@ class SomeActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-    override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(navigationView)) {
-            // Close the navigation drawer if it's open
-            drawerLayout.closeDrawer(navigationView)
-        } else {
-            // Handle back press as needed for your app
-            super.onBackPressed()
-        }
-    }
+//    override fun onBackPressed() {
+//        if (drawerLayout.isDrawerOpen(navigationView)) {
+//            // Close the navigation drawer if it's open
+//            drawerLayout.closeDrawer(navigationView)
+//        } else {
+//            // Handle back press as needed for your app
+//            super.onBackPressed()
+//        }
+//    }
 
 
 }
