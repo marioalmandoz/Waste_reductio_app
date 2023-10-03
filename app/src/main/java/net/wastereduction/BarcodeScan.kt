@@ -111,28 +111,52 @@ class BarcodeScan : AppCompatActivity() {
                         //////////AQUI VOY A EMPEZAR A COGER EL NUEVO DEL CODIGO DE BARRAS PARA PONER INFO
                         if(intentData!=null){
                             //TODO pra hacer un popUp
-                            val scannedNumber = intentData
-                            val builder = AlertDialog.Builder(this@BarcodeScan)
-                            val customLayout = layoutInflater.inflate(R.layout.custom_dialog_layout, null)
-                            val acceptButton = customLayout.findViewById<Button>(R.id.btnClose)
-                            val mapButton = customLayout.findViewById<Button>(R.id.buttonMap)
+                            if(intentData=="840023235290"){
+                                val builder = AlertDialog.Builder(this@BarcodeScan)
+                                val customLayout = layoutInflater.inflate(R.layout.custom_dialog_layout, null)
+                                val acceptButton = customLayout.findViewById<Button>(R.id.btnClose)
+                                val mapButton = customLayout.findViewById<Button>(R.id.buttonMap)
+                                // Configurar el clic del botón "Accept"
+                                acceptButton.setOnClickListener {
+                                    // Cerrar el cuadro de diálogo
+                                    builder.create().dismiss()
+                                    // Agrega aquí cualquier acción adicional que desees realizar cuando se hace clic en "Accept"
+                                }
 
-                            // Configurar el clic del botón "Accept"
-                            acceptButton.setOnClickListener {
-                                // Cerrar el cuadro de diálogo
-                                builder.create().dismiss()
-                                // Agrega aquí cualquier acción adicional que desees realizar cuando se hace clic en "Accept"
+                                // Configurar el clic del botón "Map"
+                                mapButton.setOnClickListener {
+                                    // Agrega aquí la acción que desees realizar cuando se hace clic en "Map"
+                                    abrirMaps(intentData)
+                                }
+
+                                builder.setView(customLayout)
+                                val dialog = builder.create()
+                                dialog.show()
+                            }else if(intentData=="90453533"){
+                                val builder = AlertDialog.Builder(this@BarcodeScan)
+                                val customLayout = layoutInflater.inflate(R.layout.custom_dialog_layout2, null)
+                                val acceptButton = customLayout.findViewById<Button>(R.id.btnClose)
+                                val mapButton = customLayout.findViewById<Button>(R.id.buttonMap)
+                                // Configurar el clic del botón "Accept"
+                                acceptButton.setOnClickListener {
+                                    // Cerrar el cuadro de diálogo
+                                    builder.create().dismiss()
+                                    // Agrega aquí cualquier acción adicional que desees realizar cuando se hace clic en "Accept"
+                                }
+
+                                // Configurar el clic del botón "Map"
+                                mapButton.setOnClickListener {
+                                    // Agrega aquí la acción que desees realizar cuando se hace clic en "Map"
+                                    abrirMaps(intentData)
+                                }
+
+                                builder.setView(customLayout)
+                                val dialog = builder.create()
+                                dialog.show()
                             }
 
-                            // Configurar el clic del botón "Map"
-                            mapButton.setOnClickListener {
-                                // Agrega aquí la acción que desees realizar cuando se hace clic en "Map"
-                                abrirMaps(intentData)
-                            }
 
-                            builder.setView(customLayout)
-                            val dialog = builder.create()
-                            dialog.show()
+
                         }
                         //finish()
                     }

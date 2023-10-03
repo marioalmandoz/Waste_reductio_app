@@ -111,11 +111,22 @@ class Maps : AppCompatActivity(), OnMapReadyCallback, OnMyLocationButtonClickLis
         //val coordinates = LatLng(43.315617, -1.980494)// mi casa
         if(intentData=="840023235290"){
             val coordinates = LatLng(51.450527, 5.463714)
+            val marker: MarkerOptions = MarkerOptions().position(coordinates).title("Movile container")
+            map.addMarker(marker)
+            map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(coordinates, 18f), 4000, null   // 4000 es un segundo
+            )
+        }else if(intentData=="90453533"){
+            val coordinates = LatLng(51.451357, 5.457867)
+            val marker: MarkerOptions = MarkerOptions().position(coordinates).title("Plastic container")
+            map.addMarker(marker)
+            map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(coordinates, 18f), 4000, null   // 4000 es un segundo
+            )
+        }else if(intentData==""){
+            val coordinates = LatLng(51.448589, 5.452264)
             val marker: MarkerOptions = MarkerOptions().position(coordinates).title("Paper container")
             map.addMarker(marker)
-//            val coordinates2 = LatLng(51.450739, 5.461244)
-//            val marker2: MarkerOptions = MarkerOptions().position(coordinates).title("Paper container")
-//            map.addMarker(marker2)
             map.animateCamera(
                 CameraUpdateFactory.newLatLngZoom(coordinates, 18f), 4000, null   // 4000 es un segundo
             )
