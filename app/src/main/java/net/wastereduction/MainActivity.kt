@@ -156,11 +156,11 @@ class MainActivity : AppCompatActivity() {
 //        binding.btnTopLeft.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
 //        binding.btnTopLeft.setOnClickListener{
 //
+////        }
+//        binding.btnTopRight.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
+//        binding.btnTopRight.setOnClickListener{
+//            goProfile()
 //        }
-        binding.btnTopRight.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
-        binding.btnTopRight.setOnClickListener{
-            goProfile()
-        }
 
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -30,15 +30,18 @@
             android:layout_height="100dp"
             android:background="@drawable/rounded_view_background" />
 
-        <Button
-            android:id="@+id/btnTopLeft"
+        <ImageButton
+            android:id="@+id/menuButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Top Left"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"/>
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="15dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/icon_menu"
+            android:contentDescription="Menu Icon"
+            android:scaleX="2.2"
+            android:scaleY="2.3" />
 
         <Button
             android:id="@+id/btnTopRight"

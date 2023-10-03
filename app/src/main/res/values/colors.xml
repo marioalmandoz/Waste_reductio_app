@@ -17,4 +17,10 @@
     <!-- Define your custom colors below -->
     <color name="your_color">#9EB23B</color>
 
+    <color name="colorFondoDialogo">#FF4081</color>
+    <color name="colorTextoDialogo">#FFFFFF</color>
+
+    <color name="blueish">#548CFF</color>
+
+
 </resources>
