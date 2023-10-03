@@ -5,6 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E0E0E0">
+    <View
+        android:id="@+id/myView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/rounded_view_background" />
 
     <Button
         android:id="@+id/btnTopLeft"

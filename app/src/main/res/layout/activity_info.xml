@@ -64,6 +64,39 @@
             android:text="Hi, Nigel"
             android:textColor="@android:color/white"/>
 
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="150dp"
+            android:padding="16dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="55dp"
+                android:text="Button 1"
+                android:textSize="24sp"
+                android:background="@drawable/button_corner"
+                android:layout_marginTop="16dp"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="55dp"
+                android:text="Button 2"
+                android:textSize="24sp"
+                android:background="@drawable/button_corner"
+                android:layout_marginTop="16dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="55dp"
+                android:text="Button 3"
+                android:textSize="24sp"
+                android:background="@drawable/button_corner"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/bottomMenu"

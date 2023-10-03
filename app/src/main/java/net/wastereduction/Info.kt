@@ -1,9 +1,11 @@
 package net.wastereduction
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
@@ -12,6 +14,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import net.wastereduction.databinding.ActivityMainBinding
@@ -65,10 +68,11 @@ class Info : AppCompatActivity() {
             // Acción a realizar cuando se hace clic en el Botón 5
             goGoal()
         }
-        findViewById<Button>(R.id.btnTopLeft).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
+//        findViewById<Button>(R.id.btnTopLeft).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
 //        binding.btnTopLeft.setOnClickListener{
 //
 //        }
+
         findViewById<Button>(R.id.btnTopRight).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
         findViewById<Button>(R.id.btnTopRight).setOnClickListener{
             goProfile()
@@ -101,95 +105,91 @@ class Info : AppCompatActivity() {
         startActivity(intent)
     }
 
-    class SomeActivity : AppCompatActivity() {
-        private lateinit var drawerLayout: DrawerLayout;
-        private lateinit var navigationView: NavigationView;
-        private lateinit var drawerToggle: ActionBarDrawerToggle;
-        private var isDrawerOpen = false
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
 
-            drawerLayout = findViewById(R.id.drawer_layout);
-            navigationView = findViewById(R.id.nav_view);
-            drawerToggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
-            drawerLayout.addDrawerListener(drawerToggle);
-            drawerToggle.syncState();
+}
+class SomeActivity : AppCompatActivity() {
+    private lateinit var drawerLayout: DrawerLayout;
+    private lateinit var navigationView: NavigationView;
+    private lateinit var drawerToggle: ActionBarDrawerToggle;
+    private var isDrawerOpen = false
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_info);
 
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.nav_view);
+        drawerToggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(drawerToggle);
+        drawerToggle.syncState();
 
+        val btnTopLeft: Button = findViewById(R.id.btnTopLeft)
 
-
-
-            navigationView.setNavigationItemSelectedListener { menuItem ->
-                // Handle navigation item clicks here
-                when (menuItem.itemId) {
-                    R.id.home -> {
-                        // Handle item 1 click
-                        true
-                    }
-
-                    R.id.settings -> {
-                        // Handle item 2 click
-                        true
-                    }
-                    R.id.home -> {
-                        // Handle item 1 click
-                        true
-                    }
-                    R.id.home3 -> {
-                        // Handle item 1 click
-                        true
-                    }
-                    R.id.home4 -> {
-                        // Handle item 1 click
-                        true
-                    }
-                    R.id.home6 -> {
-                        // Handle item 1 click
-                        true
-                    }
-                    R.id.home7 -> {
-                        // Handle item 1 click
-                        true
-                    }
-                    // Add more cases for other menu items
-                    else -> false
-                }
-            }
-
-
-        }
-
-        override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            // Handle navigation icon click
-            if (drawerToggle.onOptionsItemSelected(item)) {
-                return true
-            }
-            return super.onOptionsItemSelected(item)
-        }
-        override fun onBackPressed() {
-            if (drawerLayout.isDrawerOpen(navigationView)) {
-                // Close the navigation drawer if it's open
-                drawerLayout.closeDrawer(navigationView)
+        btnTopLeft.setOnClickListener {
+            Log.d("Button Click", "btnTopLeft clicked")
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START)
             } else {
-                // Handle back press as needed for your app
-                super.onBackPressed()
+                drawerLayout.openDrawer(GravityCompat.START)
             }
         }
 
-        class OtherActivity : AppCompatActivity() {
-            override fun onCreate(savedInstanceState: Bundle?) {
-                super.onCreate(savedInstanceState)
-                setContentView(R.layout.activity_main)
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            // Handle navigation item clicks here
+            when (menuItem.itemId) {
+                R.id.home -> {
+                    // Handle item 1 click
+                    true
+                }
 
-                // Assuming you have a reference to the view you want to bring to the front
-                val myView = findViewById<View>(R.id.drawer_layout)
-
-                // Bring the view to the front
-                myView.bringToFront()
+                R.id.settings -> {
+                    // Handle item 2 click
+                    true
+                }
+                R.id.home -> {
+                    // Handle item 1 click
+                    true
+                }
+                R.id.home3 -> {
+                    // Handle item 1 click
+                    true
+                }
+                R.id.home4 -> {
+                    // Handle item 1 click
+                    true
+                }
+                R.id.home6 -> {
+                    // Handle item 1 click
+                    true
+                }
+                R.id.home7 -> {
+                    // Handle item 1 click
+                    true
+                }
+                // Add more cases for other menu items
+                else -> false
             }
         }
+
 
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle navigation icon click
+        if (drawerToggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(navigationView)) {
+            // Close the navigation drawer if it's open
+            drawerLayout.closeDrawer(navigationView)
+        } else {
+            // Handle back press as needed for your app
+            super.onBackPressed()
+        }
+    }
+
+
 }

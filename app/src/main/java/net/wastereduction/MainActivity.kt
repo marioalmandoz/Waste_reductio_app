@@ -11,9 +11,11 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -22,6 +24,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -136,7 +139,7 @@ class MainActivity : AppCompatActivity() {
         private lateinit var drawerLayout: DrawerLayout;
         private lateinit var navigationView: NavigationView;
         private lateinit var drawerToggle: ActionBarDrawerToggle;
-        private var isDrawerOpen = false
+
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
@@ -147,10 +150,16 @@ class MainActivity : AppCompatActivity() {
             drawerLayout.addDrawerListener(drawerToggle);
             drawerToggle.syncState();
 
+            val menuButton: Button = findViewById(R.id.menuButton)
 
 
-
-
+            menuButton.setOnClickListener {
+                if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                    drawerLayout.closeDrawer(GravityCompat.START)
+                } else {
+                    drawerLayout.openDrawer(GravityCompat.START)
+                }
+            }
 
             navigationView.setNavigationItemSelectedListener { menuItem ->
                 // Handle navigation item clicks here
@@ -201,7 +210,7 @@ class MainActivity : AppCompatActivity() {
         }
         override fun onBackPressed() {
             if (drawerLayout.isDrawerOpen(navigationView)) {
-                // Close the navigation drawer if it's open
+                //  close the nav
                 drawerLayout.closeDrawer(navigationView)
             } else {
                 // Handle back press as needed for your app
@@ -214,7 +223,7 @@ class MainActivity : AppCompatActivity() {
                 super.onCreate(savedInstanceState)
                 setContentView(R.layout.activity_main)
 
-                // Assuming you have a reference to the view you want to bring to the front
+                // brings the side menu to the front
                 val myView = findViewById<View>(R.id.drawer_layout)
 
                 // Bring the view to the front
