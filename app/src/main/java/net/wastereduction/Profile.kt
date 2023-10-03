@@ -60,14 +60,14 @@ class Profile : AppCompatActivity() {
             // Acción a realizar cuando se hace clic en el Botón 5
             goGoal()
         }
-        findViewById<Button>(R.id.btnTopLeft).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
-//        binding.btnTopLeft.setOnClickListener{
-//
+//        findViewById<Button>(R.id.btnTopLeft).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
+////        binding.btnTopLeft.setOnClickListener{
+////
+////        }
+//        findViewById<Button>(R.id.btnTopRight).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
+//        findViewById<Button>(R.id.btnTopRight).setOnClickListener{
+//            goProfile()
 //        }
-        findViewById<Button>(R.id.btnTopRight).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
-        findViewById<Button>(R.id.btnTopRight).setOnClickListener{
-            goProfile()
-        }
     }
     private fun abrirMaps(){
         val intent = Intent(this, Maps::class.java)
