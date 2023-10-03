@@ -114,20 +114,20 @@ class BarcodeScan : AppCompatActivity() {
                             val scannedNumber = intentData
                             val builder = AlertDialog.Builder(this@BarcodeScan)
                             val customLayout = layoutInflater.inflate(R.layout.custom_dialog_layout, null)
-                            val acceptButton = customLayout.findViewById<Button>(R.id.buttonAccept)
+                            val acceptButton = customLayout.findViewById<Button>(R.id.btnClose)
                             val mapButton = customLayout.findViewById<Button>(R.id.buttonMap)
 
                             // Configurar el clic del botón "Accept"
                             acceptButton.setOnClickListener {
                                 // Cerrar el cuadro de diálogo
-                                //dialog.dismiss()
+                                builder.create().dismiss()
                                 // Agrega aquí cualquier acción adicional que desees realizar cuando se hace clic en "Accept"
                             }
 
                             // Configurar el clic del botón "Map"
                             mapButton.setOnClickListener {
                                 // Agrega aquí la acción que desees realizar cuando se hace clic en "Map"
-                                abrirMaps() // Esto es solo un ejemplo, puedes abrir tu actividad de mapas aquí
+                                abrirMaps(intentData)
                             }
 
                             builder.setView(customLayout)
@@ -154,8 +154,9 @@ class BarcodeScan : AppCompatActivity() {
 
 
 //Funciones para ir a las diferentes ventanas
-private fun abrirMaps(){
+private fun abrirMaps(intentData: String){
     val intent = Intent(this, Maps::class.java)
+    intent.putExtra("barcodeData", intentData) // Aquí pasamos el valor de intentData
     startActivity(intent)
 }
 

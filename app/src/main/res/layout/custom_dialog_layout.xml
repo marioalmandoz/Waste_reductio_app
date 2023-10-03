@@ -1,49 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:orientation="vertical"
-android:padding="16dp">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="end">
+
+    <!-- Contenedor principal -->
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#F3D3A3">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Aqui vamos a poner mucha informacion a cerca de las botellas o de lo que se escanee"
-            android:textColor="@color/colorTextoDialogo" />
-
-    </RelativeLayout>
-
-    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center_horizontal">
+        android:background="#F3D3A3">
 
-        <!-- Botón "Map" -->
+        <!-- Foto -->
+<!--        <ImageView-->
+<!--            android:id="@+id/imageView"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src=""-->
+<!--            android:layout_centerHorizontal="true" />-->
+
+        <!-- Sección de texto amplio 1 -->
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Texto amplio 1..."
+            android:textColor="@color/colorTextoDialogo" />
+<!--            android:layout_below="@id/imageView"-->
+
+
+        <!-- Sección de texto amplio 2 -->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView1"
+            android:layout_margin="16dp"
+            android:text="Texto amplio 2..."
+            android:textColor="@color/colorTextoDialogo" />
+
+        <!-- Botón "Map" en la esquina inferior izquierda -->
         <Button
             android:id="@+id/buttonMap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="16dp"
+            android:backgroundTint="@android:color/holo_green_dark"
             android:text="Map"
-            android:backgroundTint="@android:color/holo_green_dark"
-            android:textColor="@android:color/white"/>
-
-        <!-- Botón "Accept" -->
-        <Button
-            android:id="@+id/buttonAccept"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_green_dark"
-            android:text="Accept"
             android:textColor="@android:color/white" />
 
-    </LinearLayout>
-</LinearLayout>
+        <!-- Botón de "X" en la esquina superior derecha -->
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/transparent"
+            android:text="X"
+            android:textColor="#FF0000"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

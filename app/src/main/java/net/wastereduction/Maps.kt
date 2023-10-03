@@ -40,6 +40,8 @@ class Maps : AppCompatActivity(), OnMapReadyCallback, OnMyLocationButtonClickLis
     private var start:String = ""
     private var end:String = ""
 
+    var intentData:String = ""
+
     var poly: Polyline? = null
 
     companion object {
@@ -49,6 +51,13 @@ class Maps : AppCompatActivity(), OnMapReadyCallback, OnMyLocationButtonClickLis
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
+
+        intentData = getIntent().getStringExtra("barcodeData").toString()
+        if (intentData != null && intentData.isNotEmpty()) {
+            // Hacer algo con el valor de barcodeData si es necesario
+            Toast.makeText(this, "Código de barras escaneado: $intentData", Toast.LENGTH_SHORT).show()
+        }
+
 
         btnCalculate= findViewById(R.id.btnCalculateRoute)
         btnCalculate.setOnClickListener {
@@ -81,7 +90,7 @@ class Maps : AppCompatActivity(), OnMapReadyCallback, OnMyLocationButtonClickLis
 
     override fun onMapReady(googleMap: GoogleMap) {// es un metodo creado por añadir OnMapReadyCallback
         map = googleMap
-       // createMarker()
+        createMarker()
         map.setOnMyLocationButtonClickListener(this)
         map.setOnMyLocationClickListener(this)
         enableLocation()
@@ -100,12 +109,19 @@ class Maps : AppCompatActivity(), OnMapReadyCallback, OnMyLocationButtonClickLis
 
     private fun createMarker() { // para añadir puntos en el mapa y animaciones de enfoque automaticos
         //val coordinates = LatLng(43.315617, -1.980494)// mi casa
-        val coordinates = LatLng(43.315494, -1.980978)
-        val marker: MarkerOptions = MarkerOptions().position(coordinates).title("ICT University")
-        map.addMarker(marker)
-        map.animateCamera(
-            CameraUpdateFactory.newLatLngZoom(coordinates, 18f), 4000, null   // 4000 es un segundo
-        )
+        if(intentData=="840023235290"){
+            val coordinates = LatLng(51.450527, 5.463714)
+            val marker: MarkerOptions = MarkerOptions().position(coordinates).title("Paper container")
+            map.addMarker(marker)
+//            val coordinates2 = LatLng(51.450739, 5.461244)
+//            val marker2: MarkerOptions = MarkerOptions().position(coordinates).title("Paper container")
+//            map.addMarker(marker2)
+            map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(coordinates, 18f), 4000, null   // 4000 es un segundo
+            )
+        }
+
+
     }
 
     private fun isLocationPermissionGranted() = ContextCompat.checkSelfPermission(
