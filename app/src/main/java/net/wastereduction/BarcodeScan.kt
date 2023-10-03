@@ -2,10 +2,12 @@ package net.wastereduction
 
 import android.Manifest
 import android.annotation.SuppressLint
+import androidx.appcompat.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.SurfaceHolder
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.startActivity
@@ -77,12 +79,12 @@ class BarcodeScan : AppCompatActivity() {
         binding.surfaceView!!.holder.addCallback(object :SurfaceHolder.Callback{
             @SuppressLint("MissingPermission")
             override fun surfaceCreated(p0: SurfaceHolder) {
-               try {
-                   cameraSource.start(binding.surfaceView!!.holder)
+                try {
+                    cameraSource.start(binding.surfaceView!!.holder)
 
-               }catch(e:IOException){
-                   e.printStackTrace()
-               }
+                }catch(e:IOException){
+                    e.printStackTrace()
+                }
             }
 
             override fun surfaceChanged(p0: SurfaceHolder, p1: Int, p2: Int, p3: Int) {
@@ -108,7 +110,53 @@ class BarcodeScan : AppCompatActivity() {
                         binding.txtBarcodeValue.setText(intentData)
                         //////////AQUI VOY A EMPEZAR A COGER EL NUEVO DEL CODIGO DE BARRAS PARA PONER INFO
                         if(intentData!=null){
-                            Toast.makeText(applicationContext, "El numero del codigo de barras es $intentData, gracis por escanearlo", Toast.LENGTH_LONG).show()
+                            //TODO pra hacer un popUp
+                            if(intentData=="840023235290"){
+                                val builder = AlertDialog.Builder(this@BarcodeScan)
+                                val customLayout = layoutInflater.inflate(R.layout.custom_dialog_layout, null)
+                                val acceptButton = customLayout.findViewById<Button>(R.id.btnClose)
+                                val mapButton = customLayout.findViewById<Button>(R.id.buttonMap)
+                                // Configurar el clic del botón "Accept"
+                                acceptButton.setOnClickListener {
+                                    // Cerrar el cuadro de diálogo
+                                    builder.create().dismiss()
+                                    // Agrega aquí cualquier acción adicional que desees realizar cuando se hace clic en "Accept"
+                                }
+
+                                // Configurar el clic del botón "Map"
+                                mapButton.setOnClickListener {
+                                    // Agrega aquí la acción que desees realizar cuando se hace clic en "Map"
+                                    abrirMaps(intentData)
+                                }
+
+                                builder.setView(customLayout)
+                                val dialog = builder.create()
+                                dialog.show()
+                            }else if(intentData=="90453533"){
+                                val builder = AlertDialog.Builder(this@BarcodeScan)
+                                val customLayout = layoutInflater.inflate(R.layout.custom_dialog_layout2, null)
+                                val acceptButton = customLayout.findViewById<Button>(R.id.btnClose)
+                                val mapButton = customLayout.findViewById<Button>(R.id.buttonMap)
+                                // Configurar el clic del botón "Accept"
+                                acceptButton.setOnClickListener {
+                                    // Cerrar el cuadro de diálogo
+                                    builder.create().dismiss()
+                                    // Agrega aquí cualquier acción adicional que desees realizar cuando se hace clic en "Accept"
+                                }
+
+                                // Configurar el clic del botón "Map"
+                                mapButton.setOnClickListener {
+                                    // Agrega aquí la acción que desees realizar cuando se hace clic en "Map"
+                                    abrirMaps(intentData)
+                                }
+
+                                builder.setView(customLayout)
+                                val dialog = builder.create()
+                                dialog.show()
+                            }
+
+
+
                         }
                         //finish()
                     }
@@ -129,30 +177,31 @@ class BarcodeScan : AppCompatActivity() {
     }
 
 
-//Funciones para ir a las diferentes ventanas
-private fun abrirMaps(){
-    val intent = Intent(this, Maps::class.java)
-    startActivity(intent)
-}
+    //Funciones para ir a las diferentes ventanas
+    private fun abrirMaps(intentData: String){
+        val intent = Intent(this, Maps::class.java)
+        intent.putExtra("barcodeData", intentData) // Aquí pasamos el valor de intentData
+        startActivity(intent)
+    }
 
-private fun goHome(){
-    val intent = Intent(this, MainActivity::class.java)
-    startActivity(intent)
-}
-private fun goInfo(){
-    val intent = Intent(this, Info::class.java)
-    startActivity(intent)
-}
-private fun goSchedule(){
-    val intent = Intent(this, Schedule::class.java)
-    startActivity(intent)
-}
-private fun goGoal(){
-    val intent = Intent(this, Goal::class.java)
-    startActivity(intent)
-}
-private fun goProfile(){
-    val intent = Intent(this, Profile::class.java)
-    startActivity(intent)
-}
+    private fun goHome(){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+    private fun goInfo(){
+        val intent = Intent(this, Info::class.java)
+        startActivity(intent)
+    }
+    private fun goSchedule(){
+        val intent = Intent(this, Schedule::class.java)
+        startActivity(intent)
+    }
+    private fun goGoal(){
+        val intent = Intent(this, Goal::class.java)
+        startActivity(intent)
+    }
+    private fun goProfile(){
+        val intent = Intent(this, Profile::class.java)
+        startActivity(intent)
+    }
 }
