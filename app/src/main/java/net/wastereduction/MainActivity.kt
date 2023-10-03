@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         drawerLayout.addDrawerListener(drawerToggle);   //makes the drawerlayout open and close
         drawerToggle.syncState();
 
-        val menuButton: Button = findViewById(R.id.menuButton)
+        val menuButton: ImageButton = findViewById(R.id.menuButton)
 
 
         menuButton.setOnClickListener {
