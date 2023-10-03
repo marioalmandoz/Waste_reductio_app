@@ -21,6 +21,7 @@
 
 
 
+
     <RelativeLayout
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
@@ -34,16 +35,7 @@
             android:layout_height="200dp"
             android:background="@drawable/rounded_view_background" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/myView"
-            android:layout_alignParentBottom="true"
-            android:layout_marginTop="-200dp"
-            android:layout_marginBottom="651dp"
-            android:orientation="vertical">
 
-        </LinearLayout>
 
 
 
@@ -121,20 +113,23 @@
             android:text="Button"
             app:srcCompat="@drawable/baseline_keyboard_backspace_24" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/profile1"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_below="@+id/myView"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/profile1"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_below="@+id/myView"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="427dp"
+                android:text="Name"
+                android:textAlignment="viewStart" />
 
-            android:layout_alignParentBottom="true"
-
-
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="427dp"
-            android:text="Name"
-            android:textAlignment="viewStart" />
+        </LinearLayout>
 
 
     </RelativeLayout>
+
 </androidx.drawerlayout.widget.DrawerLayout>
