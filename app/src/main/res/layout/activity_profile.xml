@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -9,7 +10,10 @@
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E0E0E0">
+        android:background="@color/white"
+        tools:layout_editor_absoluteX="-69dp"
+        tools:layout_editor_absoluteY="-109dp">
+
         <View
             android:id="@+id/myView"
             android:layout_width="match_parent"
@@ -21,49 +25,50 @@
             android:id="@+id/bottomMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
             android:layout_alignParentBottom="true"
-            android:background="#E0E0E0">
+            android:background="@color/white"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="1"/>
+                android:text="1" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="2"/>
+                android:text="2" />
 
             <Button
                 android:id="@+id/btnBc"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text=""
                 android:background="#9EB23B"
-                android:textColor="#FFFFFF"/>
+                android:text=""
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="4"/>
+                android:text="4" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5"/>
+                android:text="5" />
 
         </LinearLayout>
+
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="123dp"
@@ -90,50 +95,69 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_above="@+id/bottomMenu"
-            android:layout_marginBottom="155dp"
+            android:layout_below="@+id/myView"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="55dp"
             android:orientation="vertical">
 
             <!-- Button 1 -->
-            <Button
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/profilebtn"
+                android:padding="30dp"
+                android:paddingStart="60dp"
                 android:text="Button 1"
+                android:textAlignment="viewStart"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profilebtn"
+                android:padding="30dp"
+                android:paddingStart="60dp"
+                android:text="Button 1"
+                android:textAlignment="viewStart"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profilebtn"
+                android:padding="30dp"
+                android:paddingStart="60dp"
+                android:text="Button 1"
+                android:textAlignment="viewStart"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profilebtn"
+                android:padding="30dp"
+                android:paddingStart="60dp"
+                android:text="Button 1"
+                android:textAlignment="viewStart"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profilebtn"
+                android:padding="30dp"
+                android:paddingStart="60dp"
+                android:text="Button 1"
+                android:textAlignment="viewStart"
 
                 />
 
 
-            <!-- Button 2 -->
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/profilebtn"
-                android:text="Button 2" />
-
-            <!-- Button 3 -->
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/profilebtn"
-                android:text="Button 3" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/profilebtn"
-                android:text="Button 3" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/profilebtn"
-                android:text="Button 3" />
-
-
         </LinearLayout>
     </RelativeLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
