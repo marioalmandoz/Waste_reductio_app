@@ -15,11 +15,11 @@
             <group android:checkableBehavior="single">
                 <item android:id="@+id/home3"
                     android:icon="@drawable/icon_home"
-                    android:title="About"
+                    android:title="Information"
                     />
                 <item android:id="@+id/home4"
                     android:icon="@drawable/icon_home"
-                    android:title="Log In"
+                    android:title="Schedule"
                     />
             </group>
         </menu>
@@ -29,11 +29,11 @@
             <group android:checkableBehavior="single">
                 <item android:id="@+id/home6"
                     android:icon="@drawable/icon_home"
-                    android:title="Something"
+                    android:title="About us"
                     />
                 <item android:id="@+id/home7"
                     android:icon="@drawable/icon_home"
-                    android:title="Something"
+                    android:title="Contact us"
                     />
             </group>
         </menu>

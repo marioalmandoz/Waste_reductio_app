@@ -88,16 +88,28 @@
                 android:textColor="#686767"
                 android:textSize="20dp"
                 android:textStyle="bold" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
-            <com.mikhaellopez.circularprogressbar.CircularProgressBar
-                android:id="@+id/progress_bar"
-                android:layout_width="220dp"
-                android:layout_height="180dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:gravity="center" />
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="220dp"
+                    android:layout_height="220dp"
+                    android:layout_gravity="center"
+                    android:layout_centerInParent="true" />
 
-            <!-- Second Set of TextView and CircularProgressBar -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="100.000 out of 200.000"
+                    android:textColor="#686767"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -121,13 +133,27 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <com.mikhaellopez.circularprogressbar.CircularProgressBar
-                android:id="@+id/progress_bar2"
-                android:layout_width="150dp"
-                android:layout_height="220dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:gravity="center" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/progress_bar2"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="100 out of 100"
+                    android:textColor="#686767"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
 
             <Button
                 android:id="@+id/button"
@@ -141,6 +167,8 @@
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 android:textStyle="bold" />
+
+
 
         </LinearLayout>
 
@@ -156,34 +184,34 @@
             <Button
                 android:id="@+id/button1"
                 android:layout_width="0dp"
+                android:layout_marginLeft="25dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:layout_weight="1" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:layout_weight="1"
-                />
+<!--            <Button-->
+<!--                android:id="@+id/button2"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:layout_weight="1"-->
+<!--                />-->
 
             <Button
                 android:id="@+id/btnBc"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-
                 android:layout_weight="1"
                 android:text=""
                 android:background="@android:color/transparent"
                 android:textColor="#FFFFFF"/>
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent" />
+<!--            <Button-->
+<!--                android:id="@+id/button4"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@android:color/transparent" />-->
 
             <Button
                 android:id="@+id/button5"

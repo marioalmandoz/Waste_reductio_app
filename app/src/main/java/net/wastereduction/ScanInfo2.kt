@@ -16,7 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import net.wastereduction.databinding.ActivityMainBinding
 
-class ScanInfo : AppCompatActivity() {
+class ScanInfo2 : AppCompatActivity() {
     private var requestCamera : ActivityResultLauncher<String>? = null
     private lateinit var binding : ActivityMainBinding  // para acceder a la vista de la app
 
@@ -24,7 +24,7 @@ class ScanInfo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_scan_info)
+        setContentView(R.layout.scan_info)
 
         intentData = getIntent().getStringExtra("barcodeData").toString()
         if (intentData != null && intentData.isNotEmpty()) {
@@ -52,18 +52,18 @@ class ScanInfo : AppCompatActivity() {
             // Acción a realizar cuando se hace clic en el Botón 1
             goHome()
         }
-//        findViewById<Button>(R.id.button2).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
-//
-//        findViewById<Button>(R.id.button2).setOnClickListener {
-//            // Acción a realizar cuando se hace clic en el Botón 2
-//            goInfo()
-//        }
-//
-//        findViewById<Button>(R.id.button4).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
-//        findViewById<Button>(R.id.button4).setOnClickListener {
-//            // Acción a realizar cuando se hace clic en el Botón 4
-//            goSchedule()
-//        }
+        findViewById<Button>(R.id.button2).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
+
+        findViewById<Button>(R.id.button2).setOnClickListener {
+            // Acción a realizar cuando se hace clic en el Botón 2
+            goInfo()
+        }
+
+        findViewById<Button>(R.id.button4).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
+        findViewById<Button>(R.id.button4).setOnClickListener {
+            // Acción a realizar cuando se hace clic en el Botón 4
+            goSchedule()
+        }
 
         findViewById<Button>(R.id.button5).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_reward),null,null,null)
 

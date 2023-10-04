@@ -5,27 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BarcodeScan">
+    <RelativeLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FBFBFB">
 
-    <Button
-        android:id="@+id/btnTopLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
 
-    <Button
-        android:id="@+id/btnTopRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"/>
+        <View
+            android:id="@+id/myView"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/rounded_view_background2" />
 
+        <ImageButton
+            android:id="@+id/menuButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="25dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/icon_menu"
+            android:contentDescription="Menu Icon"
+            android:scaleX="2.2"
+            android:scaleY="2.3" />
+
+        <Button
+            android:id="@+id/btnTopRight"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@android:color/white"
+            android:padding="10dp"
+            android:text="N"
+            android:textColor="@android:color/black" />
     <SurfaceView
         android:id="@+id/surfaceView"
         android:layout_width="match_parent"
@@ -49,8 +66,8 @@
 
     <Button
         android:id="@+id/btnAction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="48dp"
         android:text="Escanea el codigo" />
@@ -64,20 +81,21 @@
         android:layout_alignParentBottom="true"
         android:background="#FFFFFF">
 
+        <!--        <Button-->
+<!--            android:id="@+id/button2"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            android:layout_weight="1"-->
+<!--            />-->
+
         <Button
             android:id="@+id/button1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
+            android:layout_marginLeft="25dp"
             android:layout_weight="1"
-            />
+            android:background="@android:color/transparent" />
 
         <Button
             android:id="@+id/btnBc"
@@ -89,12 +107,12 @@
             android:background="@android:color/transparent"
             android:textColor="#FFFFFF"/>
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@android:color/transparent" />
+<!--        <Button-->
+<!--            android:id="@+id/button4"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent" />-->
 
         <Button
             android:id="@+id/button5"
@@ -105,5 +123,6 @@
 
     </LinearLayout>
 
+    </RelativeLayout>
 
-</RelativeLayout>
+    </RelativeLayout>

@@ -39,18 +39,18 @@ class BarcodeScan : AppCompatActivity() {
             // Acción a realizar cuando se hace clic en el Botón 1
             goHome()
         }
-        binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
-
-        binding.button2.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 2
-            goInfo()
-        }
-
-        binding.button4.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
-        binding.button4.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 4
-            goSchedule()
-        }
+//        binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
+//
+//        binding.button2.setOnClickListener {
+//            // Acción a realizar cuando se hace clic en el Botón 2
+//            goInfo()
+//        }
+//
+//        binding.button4.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
+//        binding.button4.setOnClickListener {
+//            // Acción a realizar cuando se hace clic en el Botón 4
+//            goSchedule()
+//        }
 
         binding.button5.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_reward),null,null,null)
 
@@ -58,10 +58,10 @@ class BarcodeScan : AppCompatActivity() {
             // Acción a realizar cuando se hace clic en el Botón 5
             goGoal()
         }
-        binding.btnTopLeft.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
-        binding.btnTopLeft.setOnClickListener{
-
-        }
+//        findViewById<Button>(R.id.menuButton).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
+//        binding..setOnClickListener{
+//
+//        }
         binding.btnTopRight.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
         binding.btnTopRight.setOnClickListener{
             goProfile()
@@ -113,48 +113,8 @@ class BarcodeScan : AppCompatActivity() {
                             //TODO pra hacer un popUp
                             if(intentData=="840023235290"){
                                 goScan_Info()
-//                                val builder = AlertDialog.Builder(this@BarcodeScan)
-//                                val customLayout = layoutInflater.inflate(R.layout.custom_dialog_layout, null)
-//                                val acceptButton = customLayout.findViewById<Button>(R.id.btnClose)
-//                                val mapButton = customLayout.findViewById<Button>(R.id.buttonMap)
-//                                // Configurar el clic del botón "Accept"
-//                                acceptButton.setOnClickListener {
-//                                    // Cerrar el cuadro de diálogo
-//                                    builder.create().dismiss()
-//                                    // Agrega aquí cualquier acción adicional que desees realizar cuando se hace clic en "Accept"
-//                                }
-//
-//                                // Configurar el clic del botón "Map"
-//                                mapButton.setOnClickListener {
-//                                    // Agrega aquí la acción que desees realizar cuando se hace clic en "Map"
-//                                    abrirMaps(intentData)
-//                                }
-//
-//                                builder.setView(customLayout)
-//                                val dialog = builder.create()
-//                                dialog.show()
                             }else if(intentData=="90453533"){
-
-//                                val builder = AlertDialog.Builder(this@BarcodeScan)
-//                                val customLayout = layoutInflater.inflate(R.layout.custom_dialog_layout2, null)
-//                                val acceptButton = customLayout.findViewById<Button>(R.id.btnClose)
-//                                val mapButton = customLayout.findViewById<Button>(R.id.buttonMap)
-//                                // Configurar el clic del botón "Accept"
-//                                acceptButton.setOnClickListener {
-//                                    // Cerrar el cuadro de diálogo
-//                                    builder.create().dismiss()
-//                                    // Agrega aquí cualquier acción adicional que desees realizar cuando se hace clic en "Accept"
-//                                }
-//
-//                                // Configurar el clic del botón "Map"
-//                                mapButton.setOnClickListener {
-//                                    // Agrega aquí la acción que desees realizar cuando se hace clic en "Map"
-//                                    abrirMaps(intentData)
-//                                }
-//
-//                                builder.setView(customLayout)
-//                                val dialog = builder.create()
-//                                dialog.show()
+                                goScan_Info2()
                             }
 
 
@@ -166,6 +126,12 @@ class BarcodeScan : AppCompatActivity() {
             }
         })
 
+    }
+
+    private fun goScan_Info2() {
+        val intent = Intent(this, ScanInfo2::class.java)
+        intent.putExtra("barcodeData", intentData)// Aquí pasamos el valor de intentData
+        startActivity(intent)
     }
 
     private fun goScan_Info() {
