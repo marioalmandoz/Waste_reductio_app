@@ -38,8 +38,6 @@ class Schedule : AppCompatActivity() {
         findViewById<Button>(R.id.btnBc).setOnClickListener(){requestCamera?.launch(Manifest.permission.CAMERA)}
         findViewById<Button>(R.id.btnBc).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
 
-//        binding.btnMaps.setOnClickListener { abrirMaps() }
-
         findViewById<Button>(R.id.button1).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_home),null,null,null)
 
         findViewById<Button>(R.id.button1).setOnClickListener {
@@ -73,7 +71,18 @@ class Schedule : AppCompatActivity() {
         findViewById<Button>(R.id.btnTopRight).setOnClickListener{
             goProfile()
         }
+
+        //boton de sumar cosas
+        findViewById<Button>(R.id.addScheedule).setOnClickListener {
+            addEvent()
+        }
     }
+
+    private fun addEvent() {
+        Toast.makeText(applicationContext, "Se puede añadir un evento",
+            Toast.LENGTH_SHORT).show()
+    }
+
     private fun abrirMaps(){
         val intent = Intent(this, Maps::class.java)
         startActivity(intent)

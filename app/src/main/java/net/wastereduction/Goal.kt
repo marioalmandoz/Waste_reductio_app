@@ -166,10 +166,10 @@ class Goal : AppCompatActivity() {
 //
 ////        }
 //
-//        findViewById<Button>(R.id.btnTopRight).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
-//        findViewById<Button>(R.id.btnTopRight).setOnClickListener{
-//            goProfile()
-//        }
+        findViewById<Button>(R.id.btnTopRight).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
+        findViewById<Button>(R.id.btnTopRight).setOnClickListener{
+            goProfile()
+        }
     }
     //Funciones para ir a las diferentes ventanas
     private fun abrirMaps(){
