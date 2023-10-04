@@ -38,8 +38,6 @@ class Schedule : AppCompatActivity() {
         findViewById<Button>(R.id.btnBc).setOnClickListener(){requestCamera?.launch(Manifest.permission.CAMERA)}
         findViewById<Button>(R.id.btnBc).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.baseline_photo_camera_24),null,null,null)
 
-//        binding.btnMaps.setOnClickListener { abrirMaps() }
-
         findViewById<Button>(R.id.button1).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_home),null,null,null)
 
         findViewById<Button>(R.id.button1).setOnClickListener {
@@ -59,21 +57,32 @@ class Schedule : AppCompatActivity() {
             goSchedule()
         }
 
-        findViewById<Button>(R.id.button5).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_goal),null,null,null)
+        findViewById<Button>(R.id.button5).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_reward),null,null,null)
 
         findViewById<Button>(R.id.button5).setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 5
             goGoal()
         }
-        findViewById<Button>(R.id.btnTopLeft).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
-//        binding.btnTopLeft.setOnClickListener{
-//
-//        }
+//        findViewById<Button>(R.id.btnTopLeft).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
+////        binding.btnTopLeft.setOnClickListener{
+////
+////        }
         findViewById<Button>(R.id.btnTopRight).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
         findViewById<Button>(R.id.btnTopRight).setOnClickListener{
             goProfile()
         }
+
+        //boton de sumar cosas
+        findViewById<Button>(R.id.addScheedule).setOnClickListener {
+            addEvent()
+        }
     }
+
+    private fun addEvent() {
+        Toast.makeText(applicationContext, "Se puede añadir un evento",
+            Toast.LENGTH_SHORT).show()
+    }
+
     private fun abrirMaps(){
         val intent = Intent(this, Maps::class.java)
         startActivity(intent)

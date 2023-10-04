@@ -10,7 +10,7 @@
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="#FBFBFB"
         tools:layout_editor_absoluteX="-69dp"
         tools:layout_editor_absoluteY="-109dp">
 
@@ -21,53 +21,6 @@
             android:background="@drawable/rounded_view_background" />
 
 
-        <LinearLayout
-            android:id="@+id/bottomMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:background="@color/white"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/button1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="1" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="2" />
-
-            <Button
-                android:id="@+id/btnBc"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#9EB23B"
-                android:text=""
-                android:textColor="#FFFFFF" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="4" />
-
-            <Button
-                android:id="@+id/button5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="5" />
-
-        </LinearLayout>
 
         <ImageView
             android:id="@+id/imageView5"
@@ -94,10 +47,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/bottomMenu"
+
             android:layout_below="@+id/myView"
+            android:layout_alignParentBottom="true"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="55dp"
+            android:layout_marginBottom="263dp"
             android:orientation="vertical">
 
             <!-- Button 1 -->
@@ -108,7 +62,7 @@
                 android:background="@drawable/profilebtn"
                 android:padding="30dp"
                 android:paddingStart="60dp"
-                android:text="Button 1"
+                android:text="Name"
                 android:textAlignment="viewStart"
 
                 />
@@ -119,7 +73,7 @@
                 android:background="@drawable/profilebtn"
                 android:padding="30dp"
                 android:paddingStart="60dp"
-                android:text="Button 1"
+                android:text="Age"
                 android:textAlignment="viewStart"
 
                 />
@@ -130,7 +84,7 @@
                 android:background="@drawable/profilebtn"
                 android:padding="30dp"
                 android:paddingStart="60dp"
-                android:text="Button 1"
+                android:text="Email"
                 android:textAlignment="viewStart"
 
                 />
@@ -141,7 +95,7 @@
                 android:background="@drawable/profilebtn"
                 android:padding="30dp"
                 android:paddingStart="60dp"
-                android:text="Button 1"
+                android:text="Phone Number"
                 android:textAlignment="viewStart"
 
                 />
@@ -152,7 +106,7 @@
                 android:background="@drawable/profilebtn"
                 android:padding="30dp"
                 android:paddingStart="60dp"
-                android:text="Button 1"
+                android:text="Vouchers"
                 android:textAlignment="viewStart"
 
                 />
