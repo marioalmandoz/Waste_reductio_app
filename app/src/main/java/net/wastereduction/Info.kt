@@ -131,7 +131,7 @@ class Info : AppCompatActivity() {
             goSchedule()
         }
 
-        findViewById<Button>(R.id.button5).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_goal),null,null,null)
+        findViewById<Button>(R.id.button5).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_reward),null,null,null)
 
         findViewById<Button>(R.id.button5).setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 5
@@ -140,12 +140,12 @@ class Info : AppCompatActivity() {
 //        findViewById<Button>(R.id.btnTopLeft).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_menu),null,null,null)
 //        binding.btnTopLeft.setOnClickListener{
 //
-////        }
-//
-//        findViewById<Button>(R.id.btnTopRight).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
-//        findViewById<Button>(R.id.btnTopRight).setOnClickListener{
-//            goProfile()
 //        }
+
+        findViewById<Button>(R.id.btnTopRight).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
+        findViewById<Button>(R.id.btnTopRight).setOnClickListener{
+            goProfile()
+        }
     }
     //Funciones para ir a las diferentes ventanas
     private fun abrirMaps(){

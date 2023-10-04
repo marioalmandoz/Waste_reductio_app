@@ -137,7 +137,7 @@ class Goal : AppCompatActivity() {
 //        binding.btnMaps.setOnClickListener { abrirMaps() }
 
         findViewById<Button>(R.id.button1).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_home),null,null,null)
-
+            findViewById<Button>(R.id.button1).text = ""
         findViewById<Button>(R.id.button1).setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 1
             goHome()
@@ -155,7 +155,7 @@ class Goal : AppCompatActivity() {
             goSchedule()
         }
 
-        findViewById<Button>(R.id.button5).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_goal),null,null,null)
+        findViewById<Button>(R.id.button5).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_reward),null,null,null)
 
         findViewById<Button>(R.id.button5).setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 5

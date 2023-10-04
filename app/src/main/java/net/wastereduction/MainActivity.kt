@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
         binding.button1.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_home),null,null,null)
 
         binding.button1.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 1
+            // Acción a realizar cuando se hace clic en el Botón 2
             goHome()
         }
         binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
@@ -147,7 +147,7 @@ class MainActivity : AppCompatActivity() {
             goSchedule()
         }
 
-        binding.button5.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_goal),null,null,null)
+        binding.button5.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_reward),null,null,null)
 
         binding.button5.setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 5
@@ -157,10 +157,10 @@ class MainActivity : AppCompatActivity() {
 //        binding.btnTopLeft.setOnClickListener{
 //
 ////        }
-//        binding.btnTopRight.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
-//        binding.btnTopRight.setOnClickListener{
-//            goProfile()
-//        }
+        binding.btnTopRight.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_profile),null,null,null)
+        binding.btnTopRight.setOnClickListener{
+            goProfile()
+        }
 
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

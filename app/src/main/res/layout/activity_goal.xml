@@ -21,7 +21,7 @@
         android:id="@+id/rootLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E0E0E0">
+        android:background="#FBFBFB">
 
 
         <View
@@ -150,31 +150,32 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:backgroundTint="@color/white"
             android:layout_alignParentBottom="true"
-            android:background="#E0E0E0">
+            android:background="#FFFFFF">
 
             <Button
                 android:id="@+id/button1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="1"/>
+                android:background="@android:color/transparent"
+                android:layout_weight="1" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
                 android:layout_weight="1"
-                android:text="2"/>
+                />
 
             <Button
                 android:id="@+id/btnBc"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+
                 android:layout_weight="1"
                 android:text=""
-                android:background="#9EB23B"
+                android:background="@android:color/transparent"
                 android:textColor="#FFFFFF"/>
 
             <Button
@@ -182,14 +183,14 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="4"/>
+                android:background="@android:color/transparent" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="5"/>
+                android:background="@android:color/transparent" />
 
         </LinearLayout>
 
