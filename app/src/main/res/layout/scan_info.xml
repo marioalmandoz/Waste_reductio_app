@@ -75,7 +75,7 @@
                 android:layout_height="100dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="376dp"
-                android:src="@drawable/movile" />
+                android:src="@drawable/plastic" />
 
             <TextView
                 android:layout_width="100dp"
@@ -93,7 +93,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="28dp"
                 android:layout_marginBottom="198dp"
-                android:src="@drawable/basura_moviles"/>
+                android:src="@drawable/contenedor_amarillo"/>
 
             "
 
