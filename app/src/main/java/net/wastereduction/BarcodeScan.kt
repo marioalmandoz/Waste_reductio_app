@@ -52,7 +52,7 @@ class BarcodeScan : AppCompatActivity() {
             goSchedule()
         }
 
-        binding.button5.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_goal),null,null,null)
+        binding.button5.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_reward),null,null,null)
 
         binding.button5.setOnClickListener {
             // Acción a realizar cuando se hace clic en el Botón 5
@@ -79,12 +79,12 @@ class BarcodeScan : AppCompatActivity() {
         binding.surfaceView!!.holder.addCallback(object :SurfaceHolder.Callback{
             @SuppressLint("MissingPermission")
             override fun surfaceCreated(p0: SurfaceHolder) {
-               try {
-                   cameraSource.start(binding.surfaceView!!.holder)
+                try {
+                    cameraSource.start(binding.surfaceView!!.holder)
 
-               }catch(e:IOException){
-                   e.printStackTrace()
-               }
+                }catch(e:IOException){
+                    e.printStackTrace()
+                }
             }
 
             override fun surfaceChanged(p0: SurfaceHolder, p1: Int, p2: Int, p3: Int) {
@@ -177,31 +177,31 @@ class BarcodeScan : AppCompatActivity() {
     }
 
 
-//Funciones para ir a las diferentes ventanas
-private fun abrirMaps(intentData: String){
-    val intent = Intent(this, Maps::class.java)
-    intent.putExtra("barcodeData", intentData) // Aquí pasamos el valor de intentData
-    startActivity(intent)
-}
+    //Funciones para ir a las diferentes ventanas
+    private fun abrirMaps(intentData: String){
+        val intent = Intent(this, Maps::class.java)
+        intent.putExtra("barcodeData", intentData) // Aquí pasamos el valor de intentData
+        startActivity(intent)
+    }
 
-private fun goHome(){
-    val intent = Intent(this, MainActivity::class.java)
-    startActivity(intent)
-}
-private fun goInfo(){
-    val intent = Intent(this, Info::class.java)
-    startActivity(intent)
-}
-private fun goSchedule(){
-    val intent = Intent(this, Schedule::class.java)
-    startActivity(intent)
-}
-private fun goGoal(){
-    val intent = Intent(this, Goal::class.java)
-    startActivity(intent)
-}
-private fun goProfile(){
-    val intent = Intent(this, Profile::class.java)
-    startActivity(intent)
-}
+    private fun goHome(){
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+    }
+    private fun goInfo(){
+        val intent = Intent(this, Info::class.java)
+        startActivity(intent)
+    }
+    private fun goSchedule(){
+        val intent = Intent(this, Schedule::class.java)
+        startActivity(intent)
+    }
+    private fun goGoal(){
+        val intent = Intent(this, Goal::class.java)
+        startActivity(intent)
+    }
+    private fun goProfile(){
+        val intent = Intent(this, Profile::class.java)
+        startActivity(intent)
+    }
 }

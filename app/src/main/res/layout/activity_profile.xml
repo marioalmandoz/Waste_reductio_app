@@ -1,92 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rootLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E0E0E0">
-
-    <Button
-        android:id="@+id/btnTopLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Top Left"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"/>
-
-    <Button
-        android:id="@+id/btnTopRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Top Right"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"/>
-
-    <Button
-        android:id="@+id/btnMaps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Map"
-        android:layout_centerHorizontal="true"
-        android:background="@color/green"
-        android:layout_below="@+id/btnTopLeft"
-        android:layout_marginTop="16dp"
-        />
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:text="This is Profile" />
-
-    <LinearLayout
-        android:id="@+id/bottomMenu"
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:background="#E0E0E0">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_width="0dp"
+
+    <RelativeLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FBFBFB"
+        tools:layout_editor_absoluteX="-69dp"
+        tools:layout_editor_absoluteY="-109dp">
+
+        <View
+            android:id="@+id/myView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/rounded_view_background" />
+
+
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="123dp"
+            android:layout_height="115dp"
+            android:layout_alignBottom="@+id/myView"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="144dp"
+            android:layout_marginEnd="144dp"
+            android:layout_marginBottom="7dp"
+            app:srcCompat="@drawable/baseline_account_circle_24" />
+
+        <ImageButton
+            android:id="@+id/button3"
+            android:layout_width="51dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="1"/>
+            android:background="#00000000"
+            android:scaleX="1.2"
+            android:scaleY="1.2"
+            android:text="Button"
+            app:srcCompat="@drawable/baseline_keyboard_backspace_24" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="2"/>
 
-        <Button
-            android:id="@+id/btnBc"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text=""
-            android:background="#9EB23B"
-            android:textColor="#FFFFFF"/>
+            android:layout_below="@+id/myView"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="263dp"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="4"/>
+            <!-- Button 1 -->
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="5"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profilebtn"
+                android:padding="30dp"
+                android:paddingStart="60dp"
+                android:text="Name"
+                android:textAlignment="viewStart"
 
-    </LinearLayout>
-</RelativeLayout>
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profilebtn"
+                android:padding="30dp"
+                android:paddingStart="60dp"
+                android:text="Age"
+                android:textAlignment="viewStart"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profilebtn"
+                android:padding="30dp"
+                android:paddingStart="60dp"
+                android:text="Email"
+                android:textAlignment="viewStart"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profilebtn"
+                android:padding="30dp"
+                android:paddingStart="60dp"
+                android:text="Phone Number"
+                android:textAlignment="viewStart"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/profilebtn"
+                android:padding="30dp"
+                android:paddingStart="60dp"
+                android:text="Vouchers"
+                android:textAlignment="viewStart"
+
+                />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

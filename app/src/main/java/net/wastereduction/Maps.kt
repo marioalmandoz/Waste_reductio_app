@@ -73,7 +73,7 @@ class Maps : AppCompatActivity(), OnMapReadyCallback, OnMyLocationButtonClickLis
                         start = "${it.longitude},${it.latitude}"
                     }else if(end.isEmpty()){
                         end = "${it.longitude},${it.latitude}"
-                       // createMarker()
+                        // createMarker()
                         createRoute()
                     }
                 }

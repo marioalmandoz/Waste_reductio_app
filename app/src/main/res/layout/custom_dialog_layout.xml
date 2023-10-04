@@ -28,7 +28,7 @@
             android:layout_margin="16dp"
             android:text="The best way to ensure the proper recycling of mobile phones is to take them to a recycling center; they will handle the disposal of these devices. If you don't have access to a recycling center near your home, another highly recommended option is to take them to a mobile phone store."
             android:textColor="@color/colorTextoDialogo" />
-<!--            android:layout_below="@id/imageView"-->
+        <!--            android:layout_below="@id/imageView"-->
 
 
         <!-- Sección de texto amplio 2 -->

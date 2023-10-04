@@ -5,7 +5,7 @@ class RemainderProvider {
         val remainderList = listOf<Remainder>(
             Remainder("3d 3h",
                 "Plastic",
-                "pic",
+                "@drawable/img_2",
                 "Remember to take out the plastic"),
             Remainder("2d 4h",
                 "Carton",
@@ -19,27 +19,6 @@ class RemainderProvider {
                 "Throw out",
                 "pic",
                 "Remember to take out the trash"),
-            Remainder("",
-                "",
-                "",
-                ""),
-            Remainder("",
-                "",
-                "",
-                ""),
-            Remainder("",
-                "",
-                "",
-                ""),
-            Remainder("",
-                "",
-                "",
-                ""),
-            Remainder("",
-                "",
-                "",
-                ""),
-
         )
     }
 }
