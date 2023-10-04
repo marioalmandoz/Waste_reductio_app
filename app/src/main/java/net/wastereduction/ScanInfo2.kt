@@ -16,7 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import net.wastereduction.databinding.ActivityMainBinding
 
-class ScanInfo : AppCompatActivity() {
+class ScanInfo2 : AppCompatActivity() {
     private var requestCamera : ActivityResultLauncher<String>? = null
     private lateinit var binding : ActivityMainBinding  // para acceder a la vista de la app
 
@@ -24,7 +24,7 @@ class ScanInfo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_scan_info)
+        setContentView(R.layout.scan_info)
 
         intentData = getIntent().getStringExtra("barcodeData").toString()
         if (intentData != null && intentData.isNotEmpty()) {

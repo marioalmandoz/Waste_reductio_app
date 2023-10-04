@@ -21,6 +21,7 @@
     <color name="colorTextoDialogo">#FFFFFF</color>
 
     <color name="blueish">#548CFF</color>
+    <color name="fondo_info">#F1EBB6</color>
 
 
 </resources>
