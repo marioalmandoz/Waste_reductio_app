@@ -73,18 +73,32 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="376dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginBottom="362dp"
                 android:src="@drawable/movile" />
 
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="16dp"
+                android:text="Did you know?"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="148dp"
+                android:layout_height="110dp"
+                android:layout_below="@+id/titleTextView"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="48dp"
-                android:layout_marginBottom="363dp"
-                android:text="Aqui va la informacion de lo que me de lagana" />
+                android:layout_marginEnd="41dp"
+                android:layout_marginBottom="328dp"
+                android:text="In 1983, the first commercial mobile phone, the Motorola DynaTAC 8000X, had a selling price of $3,995." />
 
             <ImageView
                 android:layout_width="100dp"
@@ -95,16 +109,28 @@
                 android:layout_marginBottom="198dp"
                 android:src="@drawable/basura_moviles"/>
 
-            "
+            <TextView
+                android:id="@+id/titleTextView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="21dp"
+                android:layout_marginTop="180dp"
+                android:text="How to recycle?"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="100dp"
-                android:layout_height="120dp"
+                android:layout_width="138dp"
+                android:layout_height="115dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="167dp"
-                android:layout_marginBottom="187dp"
-                android:text="Aqui se explica a donde hay quetirarlo"/>
+                android:layout_marginTop="208dp"
+                android:layout_marginEnd="138dp"
+                android:layout_marginBottom="157dp"
+                android:text="Mobile phones can be recycled at electronic
+                 recycling centers or electronic waste collection points." />
 
             <Button
                 android:id="@+id/mapButton"
@@ -134,17 +160,18 @@
             <Button
                 android:id="@+id/button1"
                 android:layout_width="0dp"
+                android:layout_marginLeft="25dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:layout_weight="1" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:layout_weight="1"
-                />
+            <!--            <Button-->
+            <!--                android:id="@+id/button2"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:background="@android:color/transparent"-->
+            <!--                android:layout_weight="1"-->
+            <!--                />-->
 
             <Button
                 android:id="@+id/btnBc"
@@ -156,19 +183,19 @@
                 android:background="@android:color/transparent"
                 android:textColor="#FFFFFF"/>
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent" />
+            <!--            <Button-->
+            <!--                android:id="@+id/button4"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:background="@android:color/transparent" />-->
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@android:color/transparent" />
+                android:background="@android:color/transparent"/>
 
         </LinearLayout>
 
