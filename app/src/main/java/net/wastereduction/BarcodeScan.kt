@@ -39,18 +39,18 @@ class BarcodeScan : AppCompatActivity() {
             // Acción a realizar cuando se hace clic en el Botón 1
             goHome()
         }
-        binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
-
-        binding.button2.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 2
-            goInfo()
-        }
-
-        binding.button4.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
-        binding.button4.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 4
-            goSchedule()
-        }
+//        binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
+//
+//        binding.button2.setOnClickListener {
+//            // Acción a realizar cuando se hace clic en el Botón 2
+//            goInfo()
+//        }
+//
+//        binding.button4.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
+//        binding.button4.setOnClickListener {
+//            // Acción a realizar cuando se hace clic en el Botón 4
+//            goSchedule()
+//        }
 
         binding.button5.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_reward),null,null,null)
 
