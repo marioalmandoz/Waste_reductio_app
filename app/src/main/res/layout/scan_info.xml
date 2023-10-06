@@ -73,8 +73,10 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
+                android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="357dp"
+                android:layout_marginTop="46dp"
+                android:layout_marginBottom="336dp"
                 android:src="@drawable/plastic" />
 
             <TextView
