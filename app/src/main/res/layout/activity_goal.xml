@@ -156,17 +156,18 @@
             <Button
                 android:id="@+id/button1"
                 android:layout_width="0dp"
+                android:layout_marginLeft="20dp"
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:layout_weight="1" />
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
-                android:layout_weight="1"
-                />
+<!--            <Button-->
+<!--                android:id="@+id/button2"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@android:color/transparent"-->
+<!--                android:layout_weight="1"-->
+<!--                />-->
 
             <Button
                 android:id="@+id/btnBc"
@@ -178,12 +179,12 @@
                 android:background="@android:color/transparent"
                 android:textColor="#FFFFFF"/>
 
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent" />
+<!--            <Button-->
+<!--                android:id="@+id/button4"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:background="@android:color/transparent" />-->
 
             <Button
                 android:id="@+id/button5"

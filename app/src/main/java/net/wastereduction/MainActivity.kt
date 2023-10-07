@@ -75,34 +75,31 @@ class MainActivity : AppCompatActivity() {
             // Handle navigation item clicks here
             when (menuItem.itemId) {
                 R.id.home -> {
-                    // Handle item 1 click
+                    startActivity(Intent(this, Info::class.java))
                     true
                 }
 
                 R.id.settings -> {
                     // Handle item 2 click
+                    goInfo()
                     true
                 }
                 R.id.home -> {
                     // Handle item 1 click
+                    goInfo()
                     true
                 }
                 R.id.home3 -> {
                     // Handle item 1 click
+                    goInfo()
                     true
                 }
                 R.id.home4 -> {
                     // Handle item 1 click
+                    goInfo()
                     true
                 }
-                R.id.home6 -> {
-                    // Handle item 1 click
-                    true
-                }
-                R.id.home7 -> {
-                    // Handle item 1 click
-                    true
-                }
+
                 // Add more cases for other menu items
                 else -> false
             }
@@ -134,18 +131,18 @@ class MainActivity : AppCompatActivity() {
             // Acción a realizar cuando se hace clic en el Botón 2
             goHome()
         }
-        binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
-
-        binding.button2.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 2
-            goInfo()
-        }
-
-        binding.button4.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
-        binding.button4.setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 4
-            goSchedule()
-        }
+//        binding.button2.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
+//
+//        binding.button2.setOnClickListener {
+//            // Acción a realizar cuando se hace clic en el Botón 2
+//            goInfo()
+//        }
+//
+//        binding.button4.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
+//        binding.button4.setOnClickListener {
+//            // Acción a realizar cuando se hace clic en el Botón 4
+//            goSchedule()
+//        }
 
         binding.button5.setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_reward),null,null,null)
 

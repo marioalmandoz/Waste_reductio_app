@@ -44,18 +44,18 @@ class Schedule : AppCompatActivity() {
             // Acción a realizar cuando se hace clic en el Botón 1
             goHome()
         }
-        findViewById<Button>(R.id.button2).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
-
-        findViewById<Button>(R.id.button2).setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 2
-            goInfo()
-        }
-
-        findViewById<Button>(R.id.button4).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
-        findViewById<Button>(R.id.button4).setOnClickListener {
-            // Acción a realizar cuando se hace clic en el Botón 4
-            goSchedule()
-        }
+//        findViewById<Button>(R.id.button2).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_info),null,null,null)
+//
+//        findViewById<Button>(R.id.button2).setOnClickListener {
+//            // Acción a realizar cuando se hace clic en el Botón 2
+//            goInfo()
+//        }
+//
+//        findViewById<Button>(R.id.button4).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_calendar),null,null,null)
+//        findViewById<Button>(R.id.button4).setOnClickListener {
+//            // Acción a realizar cuando se hace clic en el Botón 4
+//            goSchedule()
+//        }
 
         findViewById<Button>(R.id.button5).setCompoundDrawablesWithIntrinsicBounds(ContextCompat.getDrawable(this, R.drawable.icon_reward),null,null,null)
 
@@ -153,14 +153,7 @@ class Schedule : AppCompatActivity() {
                         // Handle item 1 click
                         true
                     }
-                    R.id.home6 -> {
-                        // Handle item 1 click
-                        true
-                    }
-                    R.id.home7 -> {
-                        // Handle item 1 click
-                        true
-                    }
+
                     // Add more cases for other menu items
                     else -> false
                 }
